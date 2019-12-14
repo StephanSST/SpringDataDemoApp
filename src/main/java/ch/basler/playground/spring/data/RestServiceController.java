@@ -48,7 +48,7 @@ public class RestServiceController {
   public String findAll() {
     String resultMessage = StreamSupport.stream(repository.findAll().spliterator(), false)//
         .map(c -> c.toString())//
-        .collect(Collectors.joining("\n"));
+        .collect(Collectors.joining("<br>"));
 
     LOG.info(resultMessage);
     return resultMessage;
